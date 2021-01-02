@@ -1,0 +1,17 @@
+- Make sure the project name on line 2 of CMakeLists.txt matches the name of your CLion project.
+
+- Make sure the name of your cpp file is on line 6 of CMakeLists.txt ("set(SOURCES main.cpp)").  If you change the file name from something other than "main.cpp", you will need to also change it here.
+
+- The executable file (the final file you can run like the output from the gcc commands we've used) is built in the "bin" directory (short for "binary" as the C/C++ code is compiled into binary -- bits! -- code for the computer to run).
+
+- The "run" button in CLion handles the compiling process in 3 stages:
+    1. Build/compile (Do an initial pass of checking syntax and allocating memory.)
+    2. Link (Go find the external libraries -- other people's code -- being used, such as Qt.  If you're installing Qt on your own machines, you may have issues here.)
+    3. Execute (Actually run the final program that's pieced together from your source code and the other libraries' code)
+
+- The "Run" menu has a "Clean" option which can be useful to recompile from scratch; sometimes old code that's partially built can mess up new builds.
+
+- If CMake is in your terminal's bin / environment variable path, you can run CMake within the terminal for compiling.  If in the directory containing the CMakeLists.txt file, you can run the commands:
+	cmake .    (Runs CMakeLists.txt and creates a Makefile.)
+	make .     (Runs the Makefile and compiles code.)
+	./run      (Run your executable! Here it's named "run".)
